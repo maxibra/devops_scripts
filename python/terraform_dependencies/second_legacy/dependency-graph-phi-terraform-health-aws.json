@@ -1,0 +1,113 @@
+{
+  "elasticache/phi-cache-health": [
+    "secret-manager/redis-secret",
+    "secret-manager/phi-secrets"
+  ],
+  "secret-manager/phi-secrets": [
+    "iam/policies/secret-manager/get-phi-secrets",
+    "lambda/PHI"
+  ],
+  "secret-manager/redis-secret": [
+    "iam/policies/secret-manager/get-redis-secret"
+  ],
+  "sqs/dlq": [
+    "secret-manager/phi-secrets",
+    "lambda/PHI"
+  ],
+  "lambda/PHI": [
+    "iam/policies/lambda/update-lambda",
+    "waf/phi",
+    "iam/policies/lambda/update-layer-version"
+  ],
+  "cloudfront/phi-ui": [
+    "iam/policies/cloudfront/clear-cache",
+    "cognito/user-pool"
+  ],
+  "cognito/user-pool": [
+    "iam/policies/cognito/list-pools",
+    "lambda/PHI"
+  ],
+  "s3/phi-static-health": [
+    "cloudfront/phi-ui"
+  ],
+  "sns/datadog-alert": [
+    "sqs/dlq",
+    "guardduty",
+    "lambda/rotate-keys",
+    "iam/policies/sns/notify-datadog-policy",
+    "lambda/PHI"
+  ],
+  "iam/policies/sns/notify-datadog-policy": [
+    "lambda/PHI",
+    "lambda/rotate-keys"
+  ],
+  "iam/policies/s3/cur-6over6-health": [
+    "iam/roles/cloudhealth-cur-doit-role",
+    "iam/roles/cloudhealth-role"
+  ],
+  "iam/policies/cloudhealth": [
+    "iam/roles/cloudhealth-role"
+  ],
+  "iam/policies/cmp": [
+    "iam/roles/cmp-role"
+  ],
+  "iam/policies/secret-manager/get-api-key-secret": [
+    "iam/groups/xcode-cloud"
+  ],
+  "iam/groups/xcode-cloud": [
+    "iam/users"
+  ],
+  "iam/policies/secret-manager/get-phi-secrets": [
+    "lambda/PHI"
+  ],
+  "api-gateway-base": [
+    "lambda/PHI",
+    "iam/policies/secret-manager/get-api-key-secret"
+  ],
+  "s3/cur-6over6-health": [
+    "iam/policies/s3/cur-6over6-health"
+  ],
+  "ses/verified_identities": [
+    "iam/policies/ses/send-email-go-eyes"
+  ],
+  "iam/policies/ses/send-email-go-eyes": [
+    "lambda/PHI"
+  ],
+  "iam/groups/admins": [
+    "iam/users"
+  ],
+  "iam/groups/billing": [
+    "iam/users"
+  ],
+  "iam/groups/fullstack": [
+    "iam/users"
+  ],
+  "iam/groups/circleci": [
+    "iam/users"
+  ],
+  "vpc/lambda-subnets": [
+    "lambda/rotate-keys"
+  ],
+  "s3/phi-terraform-files": [
+    "lambda/PHI"
+  ],
+  "vpc/vpcs": [
+    "lambda/PHI",
+    "elasticache/phi-cache-health"
+  ],
+  "iam/policies/sqs/dlq": [
+    "lambda/PHI"
+  ],
+  "iam/policies/lambda/update-lambda": [],
+  "iam/roles/cloudhealth-cur-doit-role": [],
+  "guardduty": [],
+  "lambda/rotate-keys": [],
+  "iam/policies/cognito/list-pools": [],
+  "iam/roles/cloudhealth-role": [],
+  "iam/roles/cmp-role": [],
+  "iam/policies/cloudfront/clear-cache": [],
+  "iam/users": [],
+  "iam/policies/lambda/update-layer-version": [],
+  "waf/phi": [],
+  "iam/policies/secret-manager/get-redis-secret": []
+}

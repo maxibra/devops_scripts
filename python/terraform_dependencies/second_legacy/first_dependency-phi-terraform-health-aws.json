@@ -1,0 +1,884 @@
+{
+  "elasticache/phi-cache-health": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "secret-manager/phi-secrets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "playground",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "playground",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "secret-manager/redis-secret": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "playground",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "playground",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "sqs/dlq": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "secret-manager/phi-secrets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "playground",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "playground",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "prod-grp",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "cloudfront/phi-ui": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "cognito/user-pool": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "iam/policies/cloudfront/clear-cache": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-static-health": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "cloudfront/phi-ui": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "sns/datadog-alert": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool",
+      "global"
+    ],
+    "dependencies": {
+      "sqs/dlq": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "iam/policies/sns/notify-datadog-policy": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "deadpool",
+            "global"
+          ]
+        },
+        "envs": [
+          "deadpool",
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "lambda/rotate-keys": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${local.data_workspace}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "guardduty": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/cur-6over6-health": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/roles/cloudhealth-cur-doit-role": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      },
+      "iam/roles/cloudhealth-role": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudhealth": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/roles/cloudhealth-role": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cmp": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/roles/cmp-role": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/get-api-key-secret": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool-prod-grp",
+      "dev-grp",
+      "prod-grp"
+    ],
+    "dependencies": {
+      "iam/groups/xcode-cloud": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "secret-manager/phi-secrets": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "playground",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "iam/policies/secret-manager/get-phi-secrets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "playground",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "playground",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "prod-grp",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gateway-base": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool-prod-grp",
+      "dev-grp",
+      "prod-grp"
+    ],
+    "dependencies": {
+      "iam/policies/secret-manager/get-api-key-secret": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "deadpool-prod-grp",
+            "dev-grp",
+            "prod-grp"
+          ]
+        },
+        "envs": [
+          "deadpool-prod-grp",
+          "dev-grp",
+          "prod-grp"
+        ],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${local.environment_group}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "secret-manager/redis-secret": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "playground",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "iam/policies/secret-manager/get-redis-secret": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "playground",
+            "preprod",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "playground",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/cur-6over6-health": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/policies/s3/cur-6over6-health": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "cognito/user-pool": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "iam/policies/cognito/list-pools": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "prod-grp",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/PHI": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "preprod",
+      "prod-grp",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "iam/policies/lambda/update-layer-version": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "iam/policies/lambda/update-lambda": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "waf/phi": {
+        "parent_envs": {
+          "envs_src": "${local.api_gateway_prefix}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "ses/verified_identities": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/ses/send-email-go-eyes": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/admins": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/billing": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/fullstack": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/circleci": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/xcode-cloud": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "vpc/lambda-subnets": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "lambda/rotate-keys": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/sns/notify-datadog-policy": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool",
+      "global"
+    ],
+    "dependencies": {
+      "lambda/rotate-keys": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [],
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${local.data_workspace}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-terraform-files": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool",
+      "global"
+    ],
+    "dependencies": {
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${local.data_workspace}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "vpc/vpcs": {
+    "parent_envs": "",
+    "envs": [
+      "deadpool-prod-grp",
+      "dev-grp",
+      "prod-grp"
+    ],
+    "dependencies": {
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${local.environment_group}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      },
+      "elasticache/phi-cache-health": {
+        "parent_envs": {
+          "envs_src": "${local.environment_group_name}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/get-phi-secrets": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "deadpool-preprod",
+      "deadpool-production",
+      "playground",
+      "preprod",
+      "production",
+      "staging"
+    ],
+    "dependencies": {
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "deadpool-preprod",
+            "deadpool-production",
+            "preprod",
+            "prod-grp",
+            "production",
+            "staging"
+          ]
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ses/send-email-go-eyes": {
+    "parent_envs": "",
+    "envs": [],
+    "dependencies": {
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/sqs/dlq": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "lambda/PHI": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "deadpool-preprod",
+          "deadpool-production",
+          "preprod",
+          "prod-grp",
+          "production",
+          "staging"
+        ],
+        "dependencies": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "fargate/go-dr-heavy-cls": [
+    [
+      "",
+      "Bad key"
+    ]
+  ],
+  "ecs/go-dr-heavy-spot-cls": [
+    [
+      "",
+      "Bad key"
+    ]
+  ],
+  "iam/policies/s3/glasseson-models": [
+    [
+      "",
+      "Bad key"
+    ]
+  ]
+}

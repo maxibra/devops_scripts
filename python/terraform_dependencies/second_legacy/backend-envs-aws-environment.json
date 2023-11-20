@@ -1,0 +1,382 @@
+{
+  "s3/glasseson-yolo-test": [
+    "global"
+  ],
+  "s3/glasseson-models": [
+    "dr",
+    "global",
+    "xena-prod"
+  ],
+  "s3/go-buckets-access-logging": [
+    "eu-central-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2"
+  ],
+  "s3/jarvis-test-data-state": [
+    "beta",
+    "production",
+    "staging"
+  ],
+  "s3/glasseson-web-cache": [
+    "dr",
+    "global"
+  ],
+  "s3/go-replicator-backup": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "s3/websockets-api-gw": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "s3/go-vpc-flow-logging": [
+    "eu-central-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2"
+  ],
+  "s3/glasseson-assets": [
+    "dr",
+    "global"
+  ],
+  "s3/go-recordings": [
+    "global"
+  ],
+  "s3/glasseson-datasets": [
+    "global"
+  ],
+  "s3/go-card-cryptor-job": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "s3/go-analyze": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "s3/myrx-web-cache": [
+    "global",
+    "xena-prod"
+  ],
+  "sns": [],
+  "fargate/go-light-cls": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "fargate/go-heavy-cls": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "fargate/go-admin-cls": [
+    "beta",
+    "xena-prod"
+  ],
+  "api-gateway": [],
+  "vpc": [],
+  "ecr": [],
+  "ecs/go-replicator-cls": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "ecs/go-heavy-spot-cls": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "api-gateway/flow-manager": [],
+  "api-gateway/config-service": [],
+  "api-gateway/websocket": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "sqs/loggly": [
+    "global"
+  ],
+  "iam/roles/api_gateway": [
+    "global"
+  ],
+  "iam/roles/websockets-api-gw-lambda": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "iam/roles/vpc-flow/cloudwatch": [
+    "eu-central-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-2"
+  ],
+  "iam/roles/vpc-flow/s3": [
+    "global"
+  ],
+  "iam/groups/view-only": [
+    "global"
+  ],
+  "iam/groups/deployers": [
+    "global"
+  ],
+  "iam/groups/recordings-reader": [
+    "global"
+  ],
+  "iam/groups/circleci": [
+    "global"
+  ],
+  "iam/groups/algo": [
+    "global"
+  ],
+  "iam/groups/admins": [
+    "global"
+  ],
+  "iam/groups/spacelift": [
+    "global"
+  ],
+  "iam/groups/android": [
+    "global"
+  ],
+  "iam/groups/loggly": [
+    "global"
+  ],
+  "iam/groups/fullstack": [
+    "global"
+  ],
+  "iam/groups/read-only": [
+    "global"
+  ],
+  "iam/groups/ses": [
+    "global"
+  ],
+  "iam/groups/yolo-test-reader": [
+    "global"
+  ],
+  "iam/groups/xcode-cloud": [
+    "global"
+  ],
+  "iam/groups/developers": [
+    "global"
+  ],
+  "iam/policies/cloudwatch/ecs-describe-services": [
+    "global"
+  ],
+  "iam/policies/cloudwatch/put-custom-metric": [
+    "global"
+  ],
+  "iam/policies/s3/glasseson-yolo-test": [
+    "global"
+  ],
+  "iam/policies/s3/glasseson-models": [
+    "global"
+  ],
+  "iam/policies/s3/read-only-s3-policies": [
+    "global"
+  ],
+  "iam/policies/s3/glasseson-web-cache": [
+    "global"
+  ],
+  "iam/policies/s3/fullstack-s3-policies": [
+    "global"
+  ],
+  "iam/policies/s3/ios-s3-policies": [
+    "global"
+  ],
+  "iam/policies/s3/glasseson-assets": [
+    "global"
+  ],
+  "iam/policies/s3/go-recordings": [
+    "global"
+  ],
+  "iam/policies/s3/android": [
+    "global"
+  ],
+  "iam/policies/s3/go-card-cryptor-job": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "iam/policies/s3/go-analyze": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "iam/policies/s3/circleci-s3-policies": [
+    "global"
+  ],
+  "iam/policies/s3/developers-s3-policies": [
+    "global"
+  ],
+  "iam/policies/s3/myrx-web-cache": [
+    "global"
+  ],
+  "iam/policies/api-gateway/websockets": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "iam/policies/ecs/circleci-ecs-policies": [
+    "global"
+  ],
+  "iam/policies/spacelift": [
+    "global"
+  ],
+  "iam/policies/loggly": [
+    "global"
+  ],
+  "iam/policies/lambda/algo-invoke-lambda": [
+    "global"
+  ],
+  "iam/policies/lambda/notify-datadog": [
+    "global"
+  ],
+  "iam/policies/ses/send-mail-policy": [
+    "global"
+  ],
+  "iam/policies/ec2/circleci-ec2-policies": [
+    "global"
+  ],
+  "iam/users": [
+    "global"
+  ],
+  "iam/account": [
+    "global"
+  ],
+  "lambda/active-sessions-scale": [
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "lambda/api-gateway-websocket": [
+    "beta",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "xena-prod"
+  ],
+  "lambda/card-cryptor-job-scale": [
+    "production",
+    "xena-prod"
+  ],
+  "lambda/qr-scans": [
+    "production",
+    "xena-prod"
+  ],
+  "lambda/replicator-scale": [
+    "production",
+    "xena-prod"
+  ],
+  "lambda/pd-verify-scans": [
+    "production",
+    "xena-prod"
+  ],
+  "elasticache/glasseson-cache": [
+    "beta",
+    "clinical",
+    "mufasa",
+    "production",
+    "sandbox",
+    "staging",
+    "thor",
+    "xena-prod"
+  ],
+  "efs": [
+    "algo",
+    "clinical",
+    "mufasa",
+    "production",
+    "thor",
+    "xena-prod"
+  ],
+  "acm/issued_certificates": [
+    "global",
+    "xena-prod"
+  ],
+  "acm/imported_certificates": [
+    "dr",
+    "global",
+    "xena-prod"
+  ],
+  "ec2/go-spot-asg": [
+    "clinical",
+    "thor"
+  ],
+  "ec2/security_groups/no_inbound": [
+    "global",
+    "xena-prod"
+  ],
+  "ec2/algo-server": [],
+  "ec2/load-balancers/internal/session-explorer": [
+    "global",
+    "xena-prod"
+  ],
+  "ec2/load-balancers/external/myrx-web": [
+    "dev",
+    "production",
+    "xena-prod"
+  ],
+  "ec2/load-balancers/external/admin-ui": [
+    "beta",
+    "xena-prod"
+  ]
+}

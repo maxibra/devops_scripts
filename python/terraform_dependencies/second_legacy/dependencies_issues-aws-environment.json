@@ -1,0 +1,138 @@
+{
+  "environment/fargate/go-heavy-cls": [
+    [
+      "s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "'s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}'"
+    ],
+    [
+      "iam/policies/s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "'iam/policies/s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}'"
+    ]
+  ],
+  "environment/ecs/go-replicator-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "'iam/policies/s3/glasseson-analyze-${local.environment_group}'"
+    ]
+  ],
+  "environment/ecs/go-heavy-spot-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "'iam/policies/s3/glasseson-analyze-${local.environment_group}'"
+    ],
+    [
+      "iam/policies/s3/go-us-east-1-card-cryptor-job",
+      "'iam/policies/s3/go-us-east-1-card-cryptor-job'"
+    ],
+    [
+      "lambda/qr-scan",
+      "'lambda/qr-scan'"
+    ]
+  ],
+  "environment/sqs/loggly": [
+    [
+      "beanstalk/static-web",
+      "'beanstalk/static-web'"
+    ]
+  ],
+  "environment/iam/groups/circleci": [
+    [
+      "iam/policies/beanstalk/circleci-beanstalk-policies",
+      "'iam/policies/beanstalk/circleci-beanstalk-policies'"
+    ],
+    [
+      "iam/policies/beanstalk/circleci-beanstalk-singapore-policies",
+      "'iam/policies/beanstalk/circleci-beanstalk-singapore-policies'"
+    ]
+  ],
+  "environment/iam/groups/algo": [
+    [
+      "iam/policies/s3/algo-s3-policies",
+      "'iam/policies/s3/algo-s3-policies'"
+    ],
+    [
+      "ec2/algo-dl",
+      "'ec2/algo-dl'"
+    ]
+  ],
+  "environment/iam/policies/s3/fullstack-s3-policies": [
+    [
+      "s3/glasseson-analyze-dev",
+      "'s3/glasseson-analyze-dev'"
+    ],
+    [
+      "s3/glasseson-analyze-prod",
+      "'s3/glasseson-analyze-prod'"
+    ]
+  ],
+  "environment/iam/policies/s3/circleci-s3-policies": [
+    [
+      "s3/algo-automation-datasets",
+      "'s3/algo-automation-datasets'"
+    ],
+    [
+      "s3/glasseson-keys",
+      "'s3/glasseson-keys'"
+    ],
+    [
+      "s3/go-beanstalk-extensions",
+      "'s3/go-beanstalk-extensions'"
+    ],
+    [
+      "beanstalk/static-web",
+      "'beanstalk/static-web'"
+    ],
+    [
+      "s3/go-github-backup",
+      "'s3/go-github-backup'"
+    ],
+    [
+      "s3/pypi.glasseson.com",
+      "'s3/pypi.glasseson.com'"
+    ],
+    [
+      "s3/go-data-registry",
+      "'s3/go-data-registry'"
+    ],
+    [
+      "s3/jarvis-lambdas-state",
+      "'s3/jarvis-lambdas-state'"
+    ]
+  ],
+  "environment/iam/policies/s3/developers-s3-policies": [
+    [
+      "s3/glasseson-keys",
+      "'s3/glasseson-keys'"
+    ]
+  ],
+  "environment/iam/policies/loggly": [
+    [
+      "beanstalk/static-web",
+      "'beanstalk/static-web'"
+    ]
+  ],
+  "environment/iam/policies/lambda/algo-invoke-lambda": [
+    [
+      "algo/algo-dl-spot/lambda",
+      "'algo/algo-dl-spot/lambda'"
+    ]
+  ],
+  "environment/iam/users": [
+    [
+      "iam/groups/data-registry-reader",
+      "'iam/groups/data-registry-reader'"
+    ],
+    [
+      "iam/groups/ios",
+      "'iam/groups/ios'"
+    ],
+    [
+      "iam/groups/it",
+      "'iam/groups/it'"
+    ],
+    [
+      "iam/groups/qa",
+      "'iam/groups/qa'"
+    ]
+  ]
+}

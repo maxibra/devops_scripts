@@ -1,0 +1,2325 @@
+{
+  "environment/s3/go-buckets-access-logging": {
+    "parent_envs": "",
+    "envs": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "environment/s3/glasseson-yolo-test": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/glasseson-models": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "dr",
+          "global",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/glasseson-web-cache": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "dr",
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/lambda-websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/glasseson-assets": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "dr",
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/go-recordings": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/glasseson-datasets": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/go-card-cryptor-job": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/go-analyze": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/s3/myrx-web-cache": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "global",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-replicator-cls": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/glasseson-models": {
+    "parent_envs": "",
+    "envs": [
+      "dr",
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/s3/glasseson-models": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "dr",
+          "global",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/glasseson-models": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/fullstack-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/ios-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/android": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/myrx-web-cache": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/fargate/go-light-cls": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/go-analyze": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/fullstack-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/go-analyze": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/ecs/go-heavy-spot-cls": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/card-cryptor-job-scale": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "production",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/go-card-cryptor-job": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/go-card-cryptor-job": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/go-recordings": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/go-recordings": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/go-analyze": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-replicator-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-heavy-spot-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/glasseson-models": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/groups/xcode-cloud": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/glasseson-yolo-test": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/groups/yolo-test-reader": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/ecs/go-replicator-cls": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/fargate/go-admin-cls": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-heavy-spot-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/read-only-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/replicator-scale": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "production",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/lambda/qr-scans": {
+    "parent_envs": "",
+    "envs": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/lambda/pd-verify-scans": {
+    "parent_envs": "",
+    "envs": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/lambda/active-sessions-scale": {
+    "parent_envs": "",
+    "envs": [
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-heavy-spot-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/api-gateway/websockets": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/ec2/security_groups/no_inbound": {
+    "parent_envs": "",
+    "envs": [
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-heavy-cls": {
+        "parent_envs": {
+          "envs_src": "${local.misc_job_sqs_sg_env}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${local.no_inbound_sg_workspace}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/fargate/go-heavy-cls": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-admin-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/sqs/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/elasticache/glasseson-cache": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/fargate/go-admin-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/active-sessions-scale": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/qr-scans": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "production",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/pd-verify-scans": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "production",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/roles/vpc-flow/cloudwatch": {
+    "parent_envs": "",
+    "envs": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "environment/vpc-default": {
+        "parent_envs": {
+          "envs_src": "${var.AWS_REGION}",
+          "envs": []
+        },
+        "envs": [
+          "eu-central-1",
+          "eu-west-1",
+          "global",
+          "us-east-1",
+          "us-east-2",
+          "us-west-2"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/go-vpc-flow-logging": {
+    "parent_envs": "",
+    "envs": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "environment/vpc-default": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "eu-central-1",
+            "eu-west-1",
+            "global",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ]
+        },
+        "envs": [
+          "eu-central-1",
+          "eu-west-1",
+          "global",
+          "us-east-1",
+          "us-east-2",
+          "us-west-2"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/go-replicator-backup": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/ecs/go-replicator-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/efs": {
+    "parent_envs": "",
+    "envs": [
+      "algo",
+      "clinical",
+      "mufasa",
+      "production",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/ecs/go-replicator-cls": {
+        "parent_envs": {
+          "envs_src": "${local.efs_environment}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ecs/go-heavy-spot-cls": {
+        "parent_envs": {
+          "envs_src": "${local.efs_environment}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/ec2/go-spot-asg": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "clinical",
+            "thor"
+          ]
+        },
+        "envs": [
+          "clinical",
+          "thor"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/go-card-cryptor-job": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/ecs/go-heavy-spot-cls": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "clinical",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "thor",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "clinical",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "thor",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/lambda/websockets-api-gw": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/api-gw/websockets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/roles/api_gateway": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/api-gw/websockets": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/fargate/go-light-cls": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/sqs/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/ec2/go-spot-asg": {
+    "parent_envs": "",
+    "envs": [
+      "clinical",
+      "thor"
+    ],
+    "dependencies": {
+      "environment/sqs/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/loggly": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/lambda/notify-datadog": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/roles/websockets-api-gw-lambda": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/active-sessions-scale": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/card-cryptor-job-scale": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/qr-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/replicator-scale": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/pd-verify-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/cloudwatch/put-custom-metric": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/roles/websockets-api-gw-lambda": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/active-sessions-scale": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/qr-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/pd-verify-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/go-recordings": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/recordings-reader": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/ec2/circleci-ec2-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/circleci": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/ecs/circleci-ecs-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/circleci": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/circleci-s3-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/circleci": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/lambda/algo-invoke-lambda": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/algo": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/spacelift": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/spacelift": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/android": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/android": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/loggly": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/loggly": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/fullstack-s3-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/fullstack": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/read-only-s3-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/read-only": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/ses/send-mail-policy": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/ses": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/s3/developers-s3-policies": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/groups/developers": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/glasseson-yolo-test": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/policies/s3/glasseson-yolo-test": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/glasseson-web-cache": {
+    "parent_envs": "",
+    "envs": [
+      "dr",
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/policies/s3/glasseson-web-cache": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/circleci-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/glasseson-assets": {
+    "parent_envs": "",
+    "envs": [
+      "dr",
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/policies/s3/fullstack-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/glasseson-assets": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/myrx-web-cache": {
+    "parent_envs": "",
+    "envs": [
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/iam/policies/s3/circleci-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/iam/policies/s3/myrx-web-cache": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/s3/lambda-websockets-api-gw": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/iam/policies/s3/circleci-s3-policies": {
+        "parent_envs": {
+          "envs_src": "${each.value}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/api-gw/websockets": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/iam/policies/api-gateway/websockets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/roles/websockets-api-gw-lambda": {
+    "parent_envs": "",
+    "envs": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "environment/iam/policies/api-gateway/websockets": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/websockets-api-gw": {
+        "parent_envs": {
+          "envs_src": "${terraform.workspace}",
+          "envs": [
+            "beta",
+            "mufasa",
+            "production",
+            "sandbox",
+            "staging",
+            "xena-prod"
+          ]
+        },
+        "envs": [
+          "beta",
+          "mufasa",
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/sqs/loggly": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/policies/loggly": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/admins": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/algo": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/android": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/circleci": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/deployers": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/developers": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/fullstack": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/read-only": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/recordings-reader": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/ses": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/yolo-test-reader": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/loggly": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/spacelift": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/xcode-cloud": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/groups/view-only": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/iam/users": {
+        "parent_envs": {
+          "envs_src": "global",
+          "envs": []
+        },
+        "envs": [
+          "global"
+        ],
+        "dependencies": {}
+      }
+    }
+  },
+  "environment/iam/policies/cloudwatch/ecs-describe-services": {
+    "parent_envs": "",
+    "envs": [
+      "global"
+    ],
+    "dependencies": {
+      "environment/lambda/active-sessions-scale": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "sandbox",
+          "staging",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/qr-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      },
+      "environment/lambda/pd-verify-scans": {
+        "parent_envs": {
+          "envs_src": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+          "envs": []
+        },
+        "envs": [
+          "production",
+          "xena-prod"
+        ],
+        "dependencies": {}
+      }
+    }
+  }
+}

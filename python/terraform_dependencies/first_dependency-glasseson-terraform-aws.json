@@ -1,0 +1,4298 @@
+{
+  "ssm/imported_crts": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "s3/glasseson-integrity": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/glasseson-integrity": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/algo-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-yolo-test": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/glasseson-yolo-test": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-buckets-access-logging": {
+    "parent_ws": {},
+    "ws": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "s3/glasseson-yolo-test": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/glasseson-models": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ],
+            "dr": [
+              "us-west-2"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/go-data-registry": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/glasseson-web-cache": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ],
+            "dr": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/lunaeast-eu-coralogix-logs-archive": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "xena-prod": [
+              "eu-west-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/lambda-websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "shazam": [
+              "us-east-1"
+            ],
+            "production": [
+              "us-east-1"
+            ],
+            "sandbox": [
+              "us-east-1"
+            ],
+            "staging": [
+              "us-east-1"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ],
+            "mufasa": [
+              "us-east-1"
+            ],
+            "beta": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/go-github-backup": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/lunaeast-us-coralogix-logs-archive": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-2"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/glasseson-assets": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ],
+            "dr": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/go-recordings": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/glasseson-datasets": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/go-card-cryptor-job": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "thor": [
+              "us-east-1"
+            ],
+            "shazam": [
+              "us-east-1"
+            ],
+            "production": [
+              "us-east-1"
+            ],
+            "sandbox": [
+              "us-east-1"
+            ],
+            "staging": [
+              "us-east-1"
+            ],
+            "clinical": [
+              "us-east-1"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ],
+            "mufasa": [
+              "us-east-1"
+            ],
+            "beta": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/go-analyze": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "thor": [
+              "us-east-1"
+            ],
+            "shazam": [
+              "us-east-1"
+            ],
+            "production": [
+              "us-east-1"
+            ],
+            "sandbox": [
+              "us-east-1"
+            ],
+            "staging": [
+              "us-east-1"
+            ],
+            "clinical": [
+              "us-east-1"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ],
+            "mufasa": [
+              "us-east-1"
+            ],
+            "beta": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "s3/myrx-web-cache": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "global": [
+              "us-east-1"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "shazam": [
+              "us-east-1"
+            ],
+            "production": [
+              "us-east-1"
+            ],
+            "sandbox": [
+              "us-east-1"
+            ],
+            "staging": [
+              "us-east-1"
+            ],
+            "clinical": [
+              "us-east-1"
+            ],
+            "xena-prod": [
+              "eu-central-1"
+            ],
+            "mufasa": [
+              "us-east-1"
+            ],
+            "beta": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "beanstalk/static-web": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "thor": [
+              "us-east-1"
+            ],
+            "clinical": [
+              "us-east-1"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-models": {
+    "parent_ws": {},
+    "ws": [
+      "dr",
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "iam/policies/s3/glasseson-models": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "global",
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/algo-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/fullstack-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/ios-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/android": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/jarvis-test-data": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "production",
+      "staging"
+    ],
+    "dependencies": {}
+  },
+  "s3/go-data-registry": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-data-registry": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-analyze-prod": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-web-cache": {
+    "parent_ws": {},
+    "ws": [
+      "dr",
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/glasseson-web-cache": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-replicator-backup": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "ecs/go-replicator-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/lunaeast-eu-coralogix-logs-archive": {
+    "parent_ws": {},
+    "ws": [
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "s3/lambda-websockets-api-gw": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "production",
+              "mufasa",
+              "staging",
+              "xena-prod",
+              "mufasa",
+              "sandbox",
+              "shazam"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-keys": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/developers-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-github-backup": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-analyze-dev": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/glasseson-analyze-dev": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/pypi.glasseson.com": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/lunaeast-us-coralogix-logs-archive": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "s3/go-vpc-flow-logging": {
+    "parent_ws": {},
+    "ws": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "vpc-default": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "eu-central-1": [
+              "eu-central-1"
+            ],
+            "eu-west-1": [
+              "eu-west-1"
+            ],
+            "us-east-1": [
+              "us-east-1"
+            ],
+            "us-east-2": [
+              "us-east-2"
+            ],
+            "us-west-2": [
+              "us-west-2"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-assets": {
+    "parent_ws": {},
+    "ws": [
+      "dr",
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/glasseson-assets": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-recordings": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-recordings": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/cloudhealth-cur-6over6": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/cloudhealth-cur-6over6": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-datasets": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/algo-automation-datasets": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-card-cryptor-job": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-us-east-1-card-cryptor-job": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-card-cryptor-job": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-analyze": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/fullstack-s3-policies": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "mufasa",
+              "production",
+              "sandbox",
+              "staging",
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-analyze": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-beanstalk-extensions": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/myrx-web-cache": {
+    "parent_ws": {},
+    "ws": [
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/myrx-web-cache": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "global",
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "sns": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "fargate/go-light-cls": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "sqs/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "clinical",
+              "staging",
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "clinical",
+              "staging",
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/myrx-web-cache": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "fargate/go-light-cls": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "fargate/go-heavy-cls": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "parent_ws": {
+          "ws_src": "var.REDIS_HEAVYCLS_RMT_STATE_WS",
+          "ws": {
+            "preprod": [
+              "\n"
+            ],
+            "production": [
+              "\n"
+            ],
+            "xena-prod": [
+              "\n"
+            ],
+            "beta": [
+              "\n"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "sqs/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "clinical",
+              "staging",
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "clinical",
+              "staging",
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ecs/go-heavy-spot-cls": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/card-cryptor-job-scale": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "production": [
+              "production"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-analyze": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/glasseson-models": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/groups/xcode-cloud": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/glasseson-yolo-test": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/groups/yolo-test-reader": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ecs/go-replicator-cls": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "fargate/go-admin-cls": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "preprod": [
+              "beta",
+              "clinical",
+              "mufasa",
+              "production",
+              "sandbox",
+              "shazam",
+              "staging"
+            ],
+            "production": [
+              "beta",
+              "clinical",
+              "mufasa",
+              "production",
+              "sandbox",
+              "shazam",
+              "staging"
+            ],
+            "xena-prod": [
+              "beta",
+              "clinical",
+              "mufasa",
+              "production",
+              "sandbox",
+              "shazam",
+              "staging"
+            ],
+            "beta": [
+              "beta",
+              "clinical",
+              "mufasa",
+              "production",
+              "sandbox",
+              "shazam",
+              "staging"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/read-only-s3-policies": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "beta",
+              "clinical",
+              "mufasa",
+              "production",
+              "sandbox",
+              "staging"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/replicator-scale": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "production": [
+              "production"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/qr-scans": {
+    "parent_ws": {},
+    "ws": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/pd-verify-scans": {
+    "parent_ws": {},
+    "ws": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/active-sessions-scale": {
+    "parent_ws": {},
+    "ws": [
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/api-gateway/websockets": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/security_groups/no_inbound": {
+    "parent_ws": {},
+    "ws": [
+      "global",
+      "shazam",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "parent_ws": {
+          "ws_src": "var.NOINBOUND_SG_WS",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "var.NO_INBOUND_RMT_WS",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "fargate/go-admin-cls": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "preprod",
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "elasticache/glasseson-cache": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "parent_ws": {
+          "ws_src": "var.REDIS_HEAVYCLS_RMT_STATE_WS",
+          "ws": {
+            "preprod": [
+              "\n"
+            ],
+            "production": [
+              "\n"
+            ],
+            "xena-prod": [
+              "\n"
+            ],
+            "beta": [
+              "\n"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "production": [
+              "production"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "production": [
+              "production"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/load-balancers/external/admin-ui": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "parent_ws": {
+          "ws_src": "var.LB_RMT_STATE_WS",
+          "ws": {
+            "preprod": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/load-balancers/internal/session-explorer": {
+    "parent_ws": {},
+    "ws": [
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "parent_ws": {
+          "ws_src": "var.LB_RMT_STATE_WS",
+          "ws": {
+            "preprod": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gateway": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "algo/algo-dl-spot/lambda": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/lambda/algo-invoke-lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ec2/terminate-instances": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/notify-datadog": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/roles/websockets-api-gw-lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/rotate-circleci-keys": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/card-cryptor-job-scale": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/replicator-scale": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "algo/algo-dl-spot/ec2": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/route53/change-record-policy": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "efs": {
+    "parent_ws": {},
+    "ws": [
+      "algo",
+      "clinical",
+      "mufasa",
+      "production",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "algo/algo-dl-spot/ec2": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "algo",
+              "clinical",
+              "mufasa",
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "parent_ws": {
+          "ws_src": "var.EFS_RMT_STATE_WS",
+          "ws": {
+            "shazam": [
+              "production"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "production"
+            ],
+            "staging": [
+              "production"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "xena-prod": [
+              "production"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "beta": [
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "var.EFS_RMT_STATE_WS",
+          "ws": {
+            "thor": [
+              "production"
+            ],
+            "shazam": [
+              "production"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "production"
+            ],
+            "staging": [
+              "production"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "xena-prod": [
+              "production"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "beta": [
+              "production"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "ec2/go-spot-asg": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "clinical": [
+              "clinical"
+            ],
+            "thor": [
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "vpc-default": {
+    "parent_ws": {},
+    "ws": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {}
+  },
+  "iam/roles/vpc-flow/cloudwatch": {
+    "parent_ws": {},
+    "ws": [
+      "eu-central-1",
+      "eu-west-1",
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "dependencies": {
+      "vpc-default": {
+        "parent_ws": {
+          "ws_src": "var.AWS_REGION",
+          "ws": {
+            "us-east-1": [
+              "us-east-1"
+            ],
+            "us-east-2": [
+              "us-east-2"
+            ],
+            "eu-central-1": [
+              "eu-central-1"
+            ],
+            "eu-west-1": [
+              "eu-west-1"
+            ],
+            "us-west-2": [
+              "us-west-2"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ecr": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "iam/policies/s3/go-us-east-1-card-cryptor-job": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "thor": [
+              "global"
+            ],
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "clinical": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-card-cryptor-job": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "clinical",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "thor",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "ecs/go-heavy-spot-cls": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "clinical": [
+              "clinical"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "thor": [
+              "thor"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gw/flow-manager": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {
+      "lambda/test-web-sdk-versions": {
+        "parent_ws": {
+          "ws_src": "var.API_GW_ENV",
+          "ws": {
+            "global": [
+              "dev"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gw/config-service": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "api-gw/websockets": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "iam/policies/api-gateway/websockets": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/websockets-api-gw": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "api-gw/websockets": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/api_gateway": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "api-gw/websockets": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "sqs/loggly": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/policies/loggly": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "beanstalk/static-web": {
+    "parent_ws": {},
+    "ws": [
+      "clinical",
+      "thor"
+    ],
+    "dependencies": {
+      "sqs/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/beanstalk/circleci-beanstalk-policies": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/go-spot-asg": {
+    "parent_ws": {},
+    "ws": [
+      "clinical",
+      "thor"
+    ],
+    "dependencies": {
+      "sqs/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "parent_ws": {
+          "ws_src": "each.value",
+          "ws": {
+            "global": [
+              "clinical",
+              "thor"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/cloudhealth-cur-doit-role": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/s3/cloudhealth-cur-6over6": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/roles/cloudhealth-cur-doit-role": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "iam/roles/cloudhealth-role": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/cloudhealth-role": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/cloudhealth": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/roles/cloudhealth-role": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/websockets-api-gw-lambda": {
+    "parent_ws": {},
+    "ws": [
+      "beta",
+      "mufasa",
+      "production",
+      "sandbox",
+      "shazam",
+      "staging",
+      "xena-prod"
+    ],
+    "dependencies": {
+      "iam/policies/api-gateway/websockets": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "terraform.workspace",
+          "ws": {
+            "beta": [
+              "beta"
+            ],
+            "mufasa": [
+              "mufasa"
+            ],
+            "production": [
+              "production"
+            ],
+            "sandbox": [
+              "sandbox"
+            ],
+            "shazam": [
+              "shazam"
+            ],
+            "staging": [
+              "staging"
+            ],
+            "xena-prod": [
+              "xena-prod"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudwatch/put-custom-metric": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/roles/websockets-api-gw-lambda": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/rotate-keys": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ],
+            "playground": [
+              "playground"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ],
+            "mufasa": [
+              "global"
+            ],
+            "beta": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/cmp-role": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/cmp": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/roles/cmp-role": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/vpc-flow/s3": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/groups/data-registry-reader": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-data-registry": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/data-registry-reader": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/view-only": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/deployers": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/recordings-reader": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-recordings": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/recordings-reader": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/circleci": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/beanstalk/circleci-beanstalk-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/circleci": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ec2/circleci-ec2-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/circleci": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ecs/circleci-ecs-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/circleci": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/circleci-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/circleci": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/it": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/it-secrets": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/it": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/algo": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/algo-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/algo": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/algo-invoke-lambda": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/algo": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/qa": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/admins": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/product": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "iam/groups/ios": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/ios-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/ios": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/get-api-key-secret": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/ios": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/spacelift": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/spacelift": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/spacelift": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/android": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/android": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/android": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/loggly": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/loggly": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/loggly": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/fullstack": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/fullstack-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/fullstack": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/read-only": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/read-only-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/read-only": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/ses": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ses/send-mail-policy": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/ses": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/yolo-test-reader": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/xcode-cloud": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/developers": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/users": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/developers-s3-policies": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "iam/groups/developers": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "global": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudwatch/ecs-describe-services": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {
+      "lambda/active-sessions-scale": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "shazam": [
+              "global"
+            ],
+            "production": [
+              "global"
+            ],
+            "sandbox": [
+              "global"
+            ],
+            "staging": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "parent_ws": {
+          "ws_src": "var.ACCOUNT_GLOBAL_WORKSPACE",
+          "ws": {
+            "production": [
+              "global"
+            ],
+            "xena-prod": [
+              "global"
+            ]
+          }
+        },
+        "ws": [],
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/glasseson-integrity": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/s3/glasseson-analyze-prod": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "iam/policies/s3/glasseson-web-cache": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/s3/glasseson-analyze-dev": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/policies/s3/glasseson-assets": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/users": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "iam/account": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "lambda/rotate-circleci-keys": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "lambda/rotate-keys": {
+    "parent_ws": {},
+    "ws": [
+      "global",
+      "playground"
+    ],
+    "dependencies": {}
+  },
+  "lambda/card-cryptor-job-scale": {
+    "parent_ws": {},
+    "ws": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "lambda/replicator-scale": {
+    "parent_ws": {},
+    "ws": [
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "lambda/test-web-sdk-versions": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "lambda/pd-verify-scale": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "replicator-backup": {
+    "parent_ws": {},
+    "ws": [
+      "global"
+    ],
+    "dependencies": {}
+  },
+  "vpc": {
+    "parent_ws": {},
+    "ws": [
+      "shazam",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "acm/aws_issued_certificates": {
+    "parent_ws": {},
+    "ws": [
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "acm/imported_certificates": {
+    "parent_ws": {},
+    "ws": [
+      "dr",
+      "global",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  },
+  "ec2/algo-server": {
+    "parent_ws": {},
+    "ws": [],
+    "dependencies": {}
+  },
+  "ec2/load-balancers/external/myrx-web": {
+    "parent_ws": {},
+    "ws": [
+      "dev",
+      "production",
+      "xena-prod"
+    ],
+    "dependencies": {}
+  }
+}

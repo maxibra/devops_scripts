@@ -1,0 +1,20 @@
+eni-06524270ab38191cd	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.95.115	subnet-ac1c98a0	us-east-1f sg-eb81528c
+eni-0098bc0c1e30f879a	in-use	lambda	AWS Lambda VPC ENI-Algo-DL-Operations-4a8265f1-fe35-0644-566a-67ab61df45b9	172.31.119.118	subnet-0c1246e489cf0e99c	us-east-1f sg-eb81528c
+eni-01ae207252f508ad2	in-use	interface	arn:aws:ecs:us-east-1:497403607515:attachment/38963b15-92d7-40e3-9755-0178867a086e	172.31.83.121	subnet-ac1c98a0	us-east-1f sg-eb81528c
+eni-01bcb5200826a0c7a	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.68.46	subnet-f2b62e97	us-east-1d sg-eb81528c
+eni-0e78952738f96696a	in-use	lambda	AWS Lambda VPC ENI-algo-dl-shutdown-2578ab87-8da4-4673-8fca-aac08f3ebc9d	172.31.130.170	subnet-0d4f0a5cb9c70aaa5	us-east-1d sg-eb81528c
+eni-0c42618e678d0d96c	in-use	lambda	AWS Lambda VPC ENI-algo-dl-shutdown-1bf34a57-4819-48fe-9e95-461207d01d85	172.31.107.131	subnet-0d50d6379e4f7b2c9	us-east-1d sg-eb81528c
+eni-01253f41e3150a59f	in-use	interface	arn:aws:ecs:us-east-1:497403607515:attachment/5b18f9f0-6462-48d8-9f0c-174bd5f1b492	172.31.55.124	subnet-0e2a4125	us-east-1a sg-eb81528c
+eni-0d3ea60175c4cecaf	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.60.127	subnet-0e2a4125	us-east-1a
+
+==========
+
+eni-01ae207252f508ad2	in-use	interface	arn:aws:ecs:us-east-1:497403607515:attachment/38963b15-92d7-40e3-9755-0178867a086e	172.31.83.121	subnet-ac1c98a0	us-east-1f sg-eb81528c
+eni-0098bc0c1e30f879a	in-use	lambda	AWS Lambda VPC ENI-Algo-DL-Operations-4a8265f1-fe35-0644-566a-67ab61df45b9	172.31.119.118	subnet-0c1246e489cf0e99c	us-east-1f sg-eb81528c
+eni-06524270ab38191cd	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.95.115	subnet-ac1c98a0	us-east-1f sg-eb81528c
+eni-0c42618e678d0d96c	in-use	lambda	AWS Lambda VPC ENI-algo-dl-shutdown-1bf34a57-4819-48fe-9e95-461207d01d85	172.31.107.131	subnet-0d50d6379e4f7b2c9	us-east-1d sg-eb81528c
+eni-0e78952738f96696a	in-use	lambda	AWS Lambda VPC ENI-algo-dl-shutdown-2578ab87-8da4-4673-8fca-aac08f3ebc9d	172.31.130.170	subnet-0d4f0a5cb9c70aaa5	us-east-1d sg-eb81528c
+eni-01bcb5200826a0c7a	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.68.46	subnet-f2b62e97	us-east-1d sg-eb81528c
+eni-01253f41e3150a59f	in-use	interface	arn:aws:ecs:us-east-1:497403607515:attachment/5b18f9f0-6462-48d8-9f0c-174bd5f1b492	172.31.55.124	subnet-0e2a4125	us-east-1a sg-eb81528c
+eni-0d3ea60175c4cecaf	available	interface	VPC Endpoint Interface vpce-0e83eecd8ee1343d2	172.31.60.127	subnet-0e2a4125	us-east-1a sg-eb81528c
+

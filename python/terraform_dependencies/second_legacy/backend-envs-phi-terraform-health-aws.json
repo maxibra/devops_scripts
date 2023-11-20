@@ -1,0 +1,181 @@
+{
+  "secret-manager/phi-secrets": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "playground",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "secret-manager/datadog-endpoint": [],
+  "secret-manager/redis-secret": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "playground",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "s3/phi-ui-deployments": [
+    "deadpool",
+    "europe"
+  ],
+  "s3/phi-terraform-health-state": [],
+  "s3/phi-integration-certificates": [],
+  "s3/cur-6over6-health": [],
+  "s3/static-health": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "s3/go-terraform-files": [
+    "deadpool",
+    "global"
+  ],
+  "s3/phi-lambda-deployments": [
+    "deadpool",
+    "europe"
+  ],
+  "sns/datadog-alert": [
+    "deadpool",
+    "global"
+  ],
+  "api-gateway/api-gateway-base": [
+    "deadpool-prod-grp",
+    "dev-grp",
+    "prod-grp"
+  ],
+  "cognito/user-pool": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "cloudfront/static-health": [
+    "beta",
+    "deadpool",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "sqs/dlq": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "iam/roles/cloudhealth-cur-doit": [],
+  "iam/roles/cloudhealth": [],
+  "iam/roles/cmp": [],
+  "iam/roles/apigateway-logging-role": [],
+  "iam/groups/circleci": [
+    "global"
+  ],
+  "iam/groups/admins": [],
+  "iam/groups/fullstack": [],
+  "iam/groups/xcode-cloud": [
+    "global"
+  ],
+  "iam/groups/billing": [],
+  "iam/policies/secret-manager/get-phi-secrets": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "playground",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "iam/policies/secret-manager/get-api-key-secret": [
+    "deadpool-prod-grp",
+    "dev-grp",
+    "prod-grp"
+  ],
+  "iam/policies/secret-manager/get-redis-secret": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "playground",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "iam/policies/cmp": [],
+  "iam/policies/s3/cur-6over6-health": [],
+  "iam/policies/s3/circleci-s3-policies": [
+    "global"
+  ],
+  "iam/policies/sns/notify-datadog-policy": [
+    "deadpool",
+    "global"
+  ],
+  "iam/policies/cognito/list-pools": [
+    "global"
+  ],
+  "iam/policies/cloudfront/clear-cache": [
+    "global"
+  ],
+  "iam/policies/sqs/dlq": [
+    "global"
+  ],
+  "iam/policies/cloudhealth": [],
+  "iam/policies/lambda/update-layer-version": [
+    "global"
+  ],
+  "iam/policies/lambda/update-lambda": [
+    "global"
+  ],
+  "iam/policies/ses/send-email-go-eyes": [],
+  "iam/users": [],
+  "iam/account": [],
+  "lambda/rotate-keys": [],
+  "lambda": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "prod-grp",
+    "production",
+    "staging"
+  ],
+  "waf/phi": [
+    "beta",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "vpc/vpcs/phi-vpc-health": [
+    "deadpool-prod-grp",
+    "dev-grp",
+    "prod-grp"
+  ],
+  "vpc/lambda-subnets": [],
+  "guardduty": [],
+  "ses/verified_identities": [
+    "global"
+  ],
+  "elasticache/phi-cache-health": [
+    "beta",
+    "deadpool-preprod",
+    "deadpool-production",
+    "preprod",
+    "production",
+    "staging"
+  ],
+  "acm/imported_certificates": [],
+  "route53": [
+    "deadpool",
+    "global"
+  ]
+}

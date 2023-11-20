@@ -1,0 +1,368 @@
+{
+  "elasticache/phi-cache-health": {
+    "env": "",
+    "dependencies": {
+      "secret-manager/phi-secrets": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "secret-manager/redis-secret": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "cloudfront/phi-ui": {
+    "env": "",
+    "dependencies": {
+      "cognito/user-pool": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "iam/policies/cloudfront/clear-cache": {
+        "env": "production",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-static-health": {
+    "env": "",
+    "dependencies": {
+      "cloudfront/phi-ui": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "production",
+        "dependencies": {}
+      }
+    }
+  },
+  "sns/datadog-alert": {
+    "env": "",
+    "dependencies": {
+      "sqs/dlq": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "iam/policies/sns/notify-datadog-policy": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "lambda/rotate-keys": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "guardduty": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/cur-6over6-health": {
+    "env": "",
+    "dependencies": {
+      "iam/roles/cloudhealth-cur-doit-role": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "iam/roles/cloudhealth-role": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudhealth": {
+    "env": "",
+    "dependencies": {
+      "iam/roles/cloudhealth-role": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cmp": {
+    "env": "",
+    "dependencies": {
+      "iam/roles/cmp-role": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/circleci-s3-policies": {
+    "env": "",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/update-lambda": {
+    "env": "",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/update-layer-version": {
+    "env": "",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cognito/list-pools": {
+    "env": "",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudfront/clear-cache": {
+    "env": "",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "secret-manager/phi-secrets": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/secret-manager/get-phi-secrets": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gateway-base": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/secret-manager/get-api-key-secret": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "env": "${local.environment_group}",
+        "dependencies": {}
+      }
+    }
+  },
+  "secret-manager/redis-secret": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/secret-manager/get-redis-secret": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/cur-6over6-health": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/s3/cur-6over6-health": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-lambda-deployments": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-ui-deployments": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "cognito/user-pool": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/cognito/list-pools": {
+        "env": "production",
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/PHI": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/lambda/update-layer-version": {
+        "env": "production",
+        "dependencies": {}
+      },
+      "iam/policies/lambda/update-lambda": {
+        "env": "production",
+        "dependencies": {}
+      },
+      "waf/phi": {
+        "env": "${local.api_gateway_prefix}",
+        "dependencies": {}
+      }
+    }
+  },
+  "ses/verified_identities": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/ses/send-email-go-eyes": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/admins": {
+    "env": "",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/billing": {
+    "env": "",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/fullstack": {
+    "env": "",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/circleci": {
+    "env": "",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/xcode-cloud": {
+    "env": "",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "vpc/lambda-subnets": {
+    "env": "",
+    "dependencies": {
+      "lambda/rotate-keys": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/sns/notify-datadog-policy": {
+    "env": "",
+    "dependencies": {
+      "lambda/rotate-keys": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "lambda/PHI": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/phi-terraform-files": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "vpc/vpcs": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "${local.environment_group}",
+        "dependencies": {}
+      },
+      "elasticache/phi-cache-health": {
+        "env": "${local.environment_group_name}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/get-phi-secrets": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ses/send-email-go-eyes": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "sqs/dlq": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/sqs/dlq": {
+    "env": "",
+    "dependencies": {
+      "lambda/PHI": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  }
+}

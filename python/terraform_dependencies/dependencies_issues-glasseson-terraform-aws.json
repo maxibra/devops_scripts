@@ -1,0 +1,86 @@
+{
+  "s3/glasseson-models": [
+    [
+      "s3/glasseson-models",
+      "is dependent on itself"
+    ]
+  ],
+  "fargate/go-light-cls": [
+    [
+      "",
+      "Bad key"
+    ],
+    [
+      "",
+      "Bad key"
+    ]
+  ],
+  "fargate/go-heavy-cls": [
+    [
+      "s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "Bad key"
+    ],
+    [
+      "iam/policies/s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "Bad key"
+    ]
+  ],
+  "ecs/go-replicator-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "Bad key"
+    ]
+  ],
+  "ecs/go-heavy-spot-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "Bad key"
+    ],
+    [
+      "lambda/qr-scan",
+      "Bad key"
+    ]
+  ],
+  "iam/groups/circleci": [
+    [
+      "iam/policies/beanstalk/circleci-beanstalk-singapore-policies",
+      "Bad key"
+    ]
+  ],
+  "iam/groups/algo": [
+    [
+      "ec2/algo-dl",
+      "Bad key"
+    ]
+  ],
+  "iam/groups/product": [
+    [
+      "",
+      "Bad key"
+    ]
+  ],
+  "iam/policies/secret-manager/get-api-key-secret": [
+    [
+      "api-gateway/api-gateway-base",
+      "Bad key"
+    ]
+  ],
+  "iam/policies/s3/glasseson-analyze-prod": [
+    [
+      "",
+      "Bad key"
+    ]
+  ],
+  "iam/policies/s3/circleci-s3-policies": [
+    [
+      "s3/jarvis-lambdas-state",
+      "Bad key"
+    ]
+  ],
+  "beanstalk/static-web": [
+    [
+      "",
+      "Bad key"
+    ]
+  ]
+}

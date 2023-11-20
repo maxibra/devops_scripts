@@ -1,0 +1,382 @@
+{
+  "s3/go-buckets-access-logging": [
+    "s3/go-recordings",
+    "beanstalk/static-web",
+    "s3/lunaeast-coralogix-logs-cx-data-archive",
+    "s3/glasseson-yolo-test",
+    "s3/glasseson-assets",
+    "s3/go-card-cryptor-job",
+    "s3/go-data-registry",
+    "s3/glasseson-datasets",
+    "s3/go-github-backup",
+    "s3/go-analyze",
+    "s3/myrx-web-cache",
+    "s3/glasseson-web-cache",
+    "ecs/go-replicator-cls",
+    "s3/lambda-websockets-api-gw",
+    "s3/glasseson-models"
+  ],
+  "s3/glasseson-yolo-test": [
+    "iam/policies/s3/glasseson-yolo-test"
+  ],
+  "s3/glasseson-models": [
+    "iam/policies/s3/fullstack-s3-policies",
+    "iam/policies/s3/android",
+    "iam/policies/s3/glasseson-models",
+    "iam/policies/s3/ios-s3-policies",
+    "iam/policies/s3/algo-s3-policies",
+    "s3/glasseson-models"
+  ],
+  "s3/go-data-registry": [
+    "iam/policies/s3/algo-s3-policies",
+    "iam/policies/s3/go-data-registry",
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "s3/glasseson-web-cache": [
+    "iam/policies/s3/glasseson-web-cache",
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "s3/lambda-websockets-api-gw": [
+    "iam/policies/s3/circleci-s3-policies",
+    "lambda/websockets-api-gw"
+  ],
+  "s3/go-github-backup": [
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "s3/glasseson-assets": [
+    "iam/policies/s3/fullstack-s3-policies",
+    "iam/policies/s3/glasseson-assets"
+  ],
+  "s3/go-recordings": [
+    "iam/policies/s3/go-recordings",
+    "fargate/go-heavy-cls"
+  ],
+  "s3/glasseson-datasets": [
+    "iam/policies/s3/algo-s3-policies"
+  ],
+  "s3/go-card-cryptor-job": [
+    "iam/policies/s3/go-card-cryptor-job",
+    "iam/policies/s3/go-us-east-1-card-cryptor-job",
+    "fargate/go-heavy-cls"
+  ],
+  "s3/go-analyze": [
+    "iam/policies/s3/fullstack-s3-policies",
+    "fargate/go-heavy-cls",
+    "iam/policies/s3/go-analyze"
+  ],
+  "s3/myrx-web-cache": [
+    "iam/policies/s3/myrx-web-cache",
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "ecs/go-replicator-cls": [
+    "fargate/go-heavy-cls",
+    "iam/policies/s3/read-only-s3-policies",
+    "ecs/go-heavy-spot-cls",
+    "fargate/go-admin-cls",
+    "lambda/replicator-scale"
+  ],
+  "beanstalk/static-web": [
+    "iam/policies/beanstalk/circleci-beanstalk-policies",
+    "sqs/loggly",
+    "iam/policies/s3/circleci-s3-policies",
+    "iam/policies/loggly"
+  ],
+  "iam/policies/s3/glasseson-models": [
+    "iam/groups/xcode-cloud",
+    "fargate/go-heavy-cls"
+  ],
+  "iam/policies/s3/algo-s3-policies": [
+    "iam/groups/algo"
+  ],
+  "iam/policies/s3/fullstack-s3-policies": [
+    "iam/groups/fullstack"
+  ],
+  "iam/policies/s3/ios-s3-policies": [
+    "iam/groups/ios"
+  ],
+  "iam/policies/s3/android": [
+    "iam/groups/android"
+  ],
+  "iam/policies/s3/myrx-web-cache": [
+    "fargate/go-light-cls"
+  ],
+  "fargate/go-light-cls": [
+    "sqs/loggly",
+    "iam/policies/loggly"
+  ],
+  "fargate/go-heavy-cls": [
+    "sqs/loggly",
+    "fargate/go-admin-cls",
+    "iam/policies/loggly"
+  ],
+  "iam/policies/s3/go-analyze": [
+    "ecs/go-heavy-spot-cls",
+    "ecs/go-replicator-cls",
+    "fargate/go-heavy-cls"
+  ],
+  "ecs/go-heavy-spot-cls": [
+    "lambda/card-cryptor-job-scale",
+    "fargate/go-heavy-cls"
+  ],
+  "iam/policies/s3/go-us-east-1-card-cryptor-job": [
+    "ecs/go-heavy-spot-cls"
+  ],
+  "iam/policies/s3/go-card-cryptor-job": [
+    "ecs/go-heavy-spot-cls"
+  ],
+  "iam/policies/s3/go-recordings": [
+    "iam/groups/recordings-reader"
+  ],
+  "iam/groups/xcode-cloud": [
+    "iam/users"
+  ],
+  "iam/policies/s3/glasseson-yolo-test": [
+    "iam/groups/yolo-test-reader",
+    "fargate/go-heavy-cls"
+  ],
+  "iam/groups/yolo-test-reader": [
+    "iam/users"
+  ],
+  "iam/policies/s3/read-only-s3-policies": [
+    "iam/groups/read-only"
+  ],
+  "lambda/qr-scans": [
+    "fargate/go-heavy-cls"
+  ],
+  "lambda/pd-verify-scans": [
+    "fargate/go-heavy-cls"
+  ],
+  "lambda/active-sessions-scale": [
+    "ecs/go-heavy-spot-cls",
+    "fargate/go-heavy-cls"
+  ],
+  "iam/policies/api-gateway/websockets": [
+    "fargate/go-heavy-cls"
+  ],
+  "ec2/security_groups/no_inbound": [
+    "fargate/go-heavy-cls",
+    "lambda/websockets-api-gw"
+  ],
+  "lambda/websockets-api-gw": [
+    "api-gw/websockets"
+  ],
+  "sqs/loggly": [
+    "iam/policies/loggly"
+  ],
+  "iam/policies/loggly": [
+    "iam/groups/loggly"
+  ],
+  "elasticache/glasseson-cache": [
+    "lambda/qr-scans",
+    "lambda/pd-verify-scans",
+    "fargate/go-admin-cls",
+    "lambda/websockets-api-gw",
+    "lambda/active-sessions-scale"
+  ],
+  "iam/policies/ec2/terminate-instances": [
+    "algo/algo-dl-spot/lambda"
+  ],
+  "algo/algo-dl-spot/lambda": [
+    "iam/policies/lambda/algo-invoke-lambda"
+  ],
+  "iam/policies/lambda/notify-datadog": [
+    "iam/roles/websockets-api-gw-lambda",
+    "lambda/rotate-circleci-keys",
+    "lambda/qr-scans",
+    "lambda/pd-verify-scans",
+    "lambda/card-cryptor-job-scale",
+    "lambda/websockets-api-gw",
+    "algo/algo-dl-spot/lambda",
+    "lambda/replicator-scale",
+    "lambda/active-sessions-scale"
+  ],
+  "iam/roles/websockets-api-gw-lambda": [
+    "iam/policies/api-gateway/websockets",
+    "lambda/websockets-api-gw"
+  ],
+  "algo/algo-dl-spot/ec2": [
+    "algo/algo-dl-spot/lambda"
+  ],
+  "iam/policies/route53/change-record-policy": [
+    "algo/algo-dl-spot/lambda"
+  ],
+  "efs": [
+    "ecs/go-heavy-spot-cls",
+    "ec2/go-spot-asg",
+    "algo/algo-dl-spot/ec2",
+    "ecs/go-replicator-cls"
+  ],
+  "ec2/go-spot-asg": [
+    "sqs/loggly",
+    "iam/policies/loggly"
+  ],
+  "iam/roles/vpc-flow/cloudwatch": [
+    "vpc-default"
+  ],
+  "s3/go-vpc-flow-logging": [
+    "vpc-default"
+  ],
+  "s3/go-replicator-backup": [
+    "ecs/go-replicator-cls"
+  ],
+  "api-gw/websockets": [
+    "iam/policies/api-gateway/websockets"
+  ],
+  "iam/roles/api_gateway": [
+    "api-gw/websockets"
+  ],
+  "iam/policies/s3/circleci-s3-policies": [
+    "iam/groups/circleci"
+  ],
+  "iam/policies/beanstalk/circleci-beanstalk-policies": [
+    "iam/groups/circleci"
+  ],
+  "iam/policies/s3/cloudhealth-cur-6over6": [
+    "iam/roles/cloudhealth-cur-doit-role",
+    "iam/roles/cloudhealth-role"
+  ],
+  "iam/policies/cloudhealth": [
+    "iam/roles/cloudhealth-role"
+  ],
+  "iam/policies/cloudwatch/put-custom-metric": [
+    "iam/roles/websockets-api-gw-lambda",
+    "lambda/qr-scans",
+    "lambda/pd-verify-scans",
+    "lambda/websockets-api-gw",
+    "lambda/rotate-keys",
+    "lambda/active-sessions-scale"
+  ],
+  "iam/policies/cmp": [
+    "iam/roles/cmp-role"
+  ],
+  "iam/policies/s3/go-data-registry": [
+    "iam/groups/data-registry-reader"
+  ],
+  "iam/groups/data-registry-reader": [
+    "iam/users"
+  ],
+  "iam/groups/recordings-reader": [
+    "iam/users"
+  ],
+  "iam/groups/circleci": [
+    "iam/users"
+  ],
+  "iam/policies/ec2/circleci-ec2-policies": [
+    "iam/groups/circleci"
+  ],
+  "iam/policies/ecs/circleci-ecs-policies": [
+    "iam/groups/circleci"
+  ],
+  "iam/policies/secret-manager/it-secrets": [
+    "iam/groups/it"
+  ],
+  "iam/groups/it": [
+    "iam/users"
+  ],
+  "iam/groups/algo": [
+    "iam/users"
+  ],
+  "iam/policies/lambda/algo-invoke-lambda": [
+    "iam/groups/algo"
+  ],
+  "iam/groups/ios": [
+    "iam/users"
+  ],
+  "iam/policies/secret-manager/get-api-key-secret": [
+    "iam/groups/ios"
+  ],
+  "iam/policies/spacelift": [
+    "iam/groups/spacelift"
+  ],
+  "iam/groups/spacelift": [
+    "iam/users"
+  ],
+  "iam/groups/android": [
+    "iam/users"
+  ],
+  "iam/groups/loggly": [
+    "iam/users"
+  ],
+  "iam/groups/fullstack": [
+    "iam/users"
+  ],
+  "iam/groups/read-only": [
+    "iam/users"
+  ],
+  "iam/policies/ses/send-mail-policy": [
+    "iam/groups/ses"
+  ],
+  "iam/groups/ses": [
+    "iam/users"
+  ],
+  "iam/policies/s3/developers-s3-policies": [
+    "iam/groups/developers"
+  ],
+  "iam/groups/developers": [
+    "iam/users"
+  ],
+  "s3/glasseson-integrity": [
+    "iam/policies/s3/algo-s3-policies",
+    "iam/policies/s3/glasseson-integrity"
+  ],
+  "s3/algo-automation-datasets": [
+    "iam/policies/s3/algo-s3-policies",
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "s3/glasseson-analyze-dev": [
+    "iam/policies/s3/fullstack-s3-policies",
+    "iam/policies/s3/glasseson-analyze-dev"
+  ],
+  "s3/glasseson-analyze-prod": [
+    "iam/policies/s3/fullstack-s3-policies"
+  ],
+  "s3/cloudhealth-cur-6over6": [
+    "iam/policies/s3/cloudhealth-cur-6over6"
+  ],
+  "s3/glasseson-keys": [
+    "iam/policies/s3/circleci-s3-policies",
+    "iam/policies/s3/developers-s3-policies"
+  ],
+  "s3/go-beanstalk-extensions": [
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "s3/pypi.glasseson.com": [
+    "iam/policies/s3/circleci-s3-policies"
+  ],
+  "iam/groups/admins": [
+    "iam/users"
+  ],
+  "iam/groups/deployers": [
+    "iam/users"
+  ],
+  "iam/groups/qa": [
+    "iam/users"
+  ],
+  "iam/groups/view-only": [
+    "iam/users"
+  ],
+  "iam/policies/cloudwatch/ecs-describe-services": [
+    "lambda/qr-scans",
+    "lambda/pd-verify-scans",
+    "lambda/active-sessions-scale"
+  ],
+  "api-gw/flow-manager": [
+    "lambda/test-web-sdk-versions"
+  ],
+  "iam/users": [],
+  "s3/lunaeast-coralogix-logs-cx-data-archive": [],
+  "vpc-default": [],
+  "iam/roles/cloudhealth-cur-doit-role": [],
+  "iam/roles/cmp-role": [],
+  "iam/policies/s3/glasseson-analyze-dev": [],
+  "lambda/card-cryptor-job-scale": [],
+  "lambda/test-web-sdk-versions": [],
+  "fargate/go-admin-cls": [],
+  "iam/policies/s3/glasseson-web-cache": [],
+  "iam/policies/s3/glasseson-integrity": [],
+  "iam/roles/cloudhealth-role": [],
+  "lambda/rotate-circleci-keys": [],
+  "lambda/rotate-keys": [],
+  "lambda/replicator-scale": [],
+  "iam/policies/s3/glasseson-assets": []
+}

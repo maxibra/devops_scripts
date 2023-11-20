@@ -1,0 +1,40 @@
+{
+  "fargate/go-heavy-cls": [
+    [
+      "s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "'s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}'"
+    ],
+    [
+      "iam/policies/s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}",
+      "'iam/policies/s3/glasseson-analyze-${local.analyze_bucket_deprecated_suffix}'"
+    ]
+  ],
+  "ecs/go-replicator-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "'iam/policies/s3/glasseson-analyze-${local.environment_group}'"
+    ]
+  ],
+  "ecs/go-heavy-spot-cls": [
+    [
+      "iam/policies/s3/glasseson-analyze-${local.environment_group}",
+      "'iam/policies/s3/glasseson-analyze-${local.environment_group}'"
+    ],
+    [
+      "lambda/qr-scan",
+      "'lambda/qr-scan'"
+    ]
+  ],
+  "iam/groups/circleci": [
+    [
+      "iam/policies/beanstalk/circleci-beanstalk-singapore-policies",
+      "'iam/policies/beanstalk/circleci-beanstalk-singapore-policies'"
+    ]
+  ],
+  "iam/groups/algo": [
+    [
+      "ec2/algo-dl",
+      "'ec2/algo-dl'"
+    ]
+  ]
+}

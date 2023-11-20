@@ -1,0 +1,262 @@
+{
+  "environment/s3/go-buckets-access-logging": [
+    "environment/ecs/go-replicator-cls",
+    "environment/s3/glasseson-web-cache",
+    "environment/s3/glasseson-datasets",
+    "environment/s3/go-card-cryptor-job",
+    "environment/s3/glasseson-models",
+    "environment/s3/lambda-websockets-api-gw",
+    "environment/s3/glasseson-assets",
+    "environment/s3/go-recordings",
+    "environment/s3/glasseson-yolo-test",
+    "environment/s3/go-analyze",
+    "environment/s3/myrx-web-cache"
+  ],
+  "environment/s3/glasseson-yolo-test": [
+    "environment/iam/policies/s3/glasseson-yolo-test"
+  ],
+  "environment/s3/glasseson-models": [
+    "environment/s3/glasseson-models",
+    "environment/iam/policies/s3/fullstack-s3-policies",
+    "environment/iam/policies/s3/glasseson-models",
+    "environment/iam/policies/s3/android",
+    "environment/iam/policies/s3/ios-s3-policies"
+  ],
+  "environment/s3/glasseson-web-cache": [
+    "environment/iam/policies/s3/glasseson-web-cache",
+    "environment/iam/policies/s3/circleci-s3-policies"
+  ],
+  "environment/s3/lambda-websockets-api-gw": [
+    "environment/lambda/websockets-api-gw",
+    "environment/iam/policies/s3/circleci-s3-policies"
+  ],
+  "environment/s3/glasseson-assets": [
+    "environment/iam/policies/s3/glasseson-assets",
+    "environment/iam/policies/s3/fullstack-s3-policies"
+  ],
+  "environment/s3/go-recordings": [
+    "environment/iam/policies/s3/go-recordings",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/s3/go-card-cryptor-job": [
+    "environment/iam/policies/s3/go-card-cryptor-job",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/s3/go-analyze": [
+    "environment/iam/policies/s3/go-analyze",
+    "environment/iam/policies/s3/fullstack-s3-policies",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/s3/myrx-web-cache": [
+    "environment/iam/policies/s3/myrx-web-cache",
+    "environment/iam/policies/s3/circleci-s3-policies"
+  ],
+  "environment/ecs/go-replicator-cls": [
+    "environment/ecs/go-heavy-spot-cls",
+    "environment/lambda/replicator-scale",
+    "environment/fargate/go-admin-cls",
+    "environment/fargate/go-heavy-cls",
+    "environment/iam/policies/s3/read-only-s3-policies"
+  ],
+  "environment/iam/policies/s3/glasseson-models": [
+    "environment/iam/groups/xcode-cloud",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/iam/policies/s3/fullstack-s3-policies": [
+    "environment/iam/groups/fullstack"
+  ],
+  "environment/iam/policies/s3/android": [
+    "environment/iam/groups/android"
+  ],
+  "environment/iam/policies/s3/myrx-web-cache": [
+    "environment/fargate/go-light-cls"
+  ],
+  "environment/fargate/go-light-cls": [
+    "environment/iam/policies/loggly",
+    "environment/sqs/loggly"
+  ],
+  "environment/fargate/go-heavy-cls": [
+    "environment/iam/policies/loggly",
+    "environment/sqs/loggly",
+    "environment/fargate/go-admin-cls"
+  ],
+  "environment/iam/policies/s3/go-analyze": [
+    "environment/ecs/go-heavy-spot-cls",
+    "environment/ecs/go-replicator-cls",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/ecs/go-heavy-spot-cls": [
+    "environment/lambda/card-cryptor-job-scale",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/iam/policies/s3/go-card-cryptor-job": [
+    "environment/ecs/go-heavy-spot-cls"
+  ],
+  "environment/iam/policies/s3/go-recordings": [
+    "environment/iam/groups/recordings-reader"
+  ],
+  "environment/iam/groups/xcode-cloud": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/s3/glasseson-yolo-test": [
+    "environment/iam/groups/yolo-test-reader",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/iam/groups/yolo-test-reader": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/s3/read-only-s3-policies": [
+    "environment/iam/groups/read-only"
+  ],
+  "environment/lambda/qr-scans": [
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/lambda/pd-verify-scans": [
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/lambda/active-sessions-scale": [
+    "environment/ecs/go-heavy-spot-cls",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/iam/policies/api-gateway/websockets": [
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/ec2/security_groups/no_inbound": [
+    "environment/lambda/websockets-api-gw",
+    "environment/fargate/go-heavy-cls"
+  ],
+  "environment/lambda/websockets-api-gw": [
+    "environment/api-gw/websockets"
+  ],
+  "environment/sqs/loggly": [
+    "environment/iam/policies/loggly"
+  ],
+  "environment/iam/policies/loggly": [
+    "environment/iam/groups/loggly"
+  ],
+  "environment/elasticache/glasseson-cache": [
+    "environment/fargate/go-admin-cls",
+    "environment/lambda/qr-scans",
+    "environment/lambda/websockets-api-gw",
+    "environment/lambda/pd-verify-scans",
+    "environment/lambda/active-sessions-scale"
+  ],
+  "environment/iam/roles/vpc-flow/cloudwatch": [
+    "environment/vpc-default"
+  ],
+  "environment/s3/go-vpc-flow-logging": [
+    "environment/vpc-default"
+  ],
+  "environment/s3/go-replicator-backup": [
+    "environment/ecs/go-replicator-cls"
+  ],
+  "environment/efs": [
+    "environment/ecs/go-heavy-spot-cls",
+    "environment/ec2/go-spot-asg",
+    "environment/ecs/go-replicator-cls"
+  ],
+  "environment/ec2/go-spot-asg": [
+    "environment/iam/policies/loggly",
+    "environment/sqs/loggly"
+  ],
+  "environment/api-gw/websockets": [
+    "environment/iam/policies/api-gateway/websockets"
+  ],
+  "environment/iam/roles/api_gateway": [
+    "environment/api-gw/websockets"
+  ],
+  "environment/iam/policies/lambda/notify-datadog": [
+    "environment/iam/roles/websockets-api-gw-lambda",
+    "environment/lambda/replicator-scale",
+    "environment/lambda/qr-scans",
+    "environment/lambda/websockets-api-gw",
+    "environment/lambda/pd-verify-scans",
+    "environment/lambda/card-cryptor-job-scale",
+    "environment/lambda/active-sessions-scale"
+  ],
+  "environment/iam/roles/websockets-api-gw-lambda": [
+    "environment/lambda/websockets-api-gw",
+    "environment/iam/policies/api-gateway/websockets"
+  ],
+  "environment/iam/policies/cloudwatch/put-custom-metric": [
+    "environment/iam/roles/websockets-api-gw-lambda",
+    "environment/lambda/qr-scans",
+    "environment/lambda/websockets-api-gw",
+    "environment/lambda/pd-verify-scans",
+    "environment/lambda/active-sessions-scale"
+  ],
+  "environment/iam/groups/recordings-reader": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/ec2/circleci-ec2-policies": [
+    "environment/iam/groups/circleci"
+  ],
+  "environment/iam/groups/circleci": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/ecs/circleci-ecs-policies": [
+    "environment/iam/groups/circleci"
+  ],
+  "environment/iam/policies/s3/circleci-s3-policies": [
+    "environment/iam/groups/circleci"
+  ],
+  "environment/iam/policies/lambda/algo-invoke-lambda": [
+    "environment/iam/groups/algo"
+  ],
+  "environment/iam/groups/algo": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/spacelift": [
+    "environment/iam/groups/spacelift"
+  ],
+  "environment/iam/groups/spacelift": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/android": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/loggly": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/fullstack": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/read-only": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/ses/send-mail-policy": [
+    "environment/iam/groups/ses"
+  ],
+  "environment/iam/groups/ses": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/s3/developers-s3-policies": [
+    "environment/iam/groups/developers"
+  ],
+  "environment/iam/groups/developers": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/admins": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/deployers": [
+    "environment/iam/users"
+  ],
+  "environment/iam/groups/view-only": [
+    "environment/iam/users"
+  ],
+  "environment/iam/policies/cloudwatch/ecs-describe-services": [
+    "environment/lambda/qr-scans",
+    "environment/lambda/pd-verify-scans",
+    "environment/lambda/active-sessions-scale"
+  ],
+  "environment/iam/policies/s3/glasseson-web-cache": [],
+  "environment/lambda/replicator-scale": [],
+  "environment/iam/policies/s3/ios-s3-policies": [],
+  "environment/fargate/go-admin-cls": [],
+  "environment/s3/glasseson-datasets": [],
+  "environment/iam/users": [],
+  "environment/lambda/card-cryptor-job-scale": [],
+  "environment/vpc-default": [],
+  "environment/iam/policies/s3/glasseson-assets": []
+}

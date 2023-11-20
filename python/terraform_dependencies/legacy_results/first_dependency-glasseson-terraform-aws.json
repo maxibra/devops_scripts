@@ -1,0 +1,1170 @@
+{
+  "s3/go-buckets-access-logging": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "s3/glasseson-yolo-test": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/glasseson-models": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/lunaeast-coralogix-logs-cx-data-archive": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/go-data-registry": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/glasseson-web-cache": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/lambda-websockets-api-gw": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/go-github-backup": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/glasseson-assets": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/go-recordings": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/glasseson-datasets": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/go-card-cryptor-job": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/go-analyze": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "s3/myrx-web-cache": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      },
+      "beanstalk/static-web": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-models": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "s3/glasseson-models": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/glasseson-models": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/algo-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/fullstack-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/ios-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/android": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/myrx-web-cache": {
+    "env": "global.env",
+    "dependencies": {
+      "fargate/go-light-cls": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-analyze": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/fullstack-s3-policies": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-analyze": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "ecs/go-heavy-spot-cls": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/card-cryptor-job-scale": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-card-cryptor-job": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-us-east-1-card-cryptor-job": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-card-cryptor-job": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-recordings": {
+    "env": "global.env",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-recordings": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-analyze": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/glasseson-models": {
+    "env": "global.env",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/groups/xcode-cloud": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/glasseson-yolo-test": {
+    "env": "global.env",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/groups/yolo-test-reader": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "ecs/go-replicator-cls": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "fargate/go-admin-cls": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/read-only-s3-policies": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "lambda/replicator-scale": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/qr-scans": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/pd-verify-scans": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/active-sessions-scale": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/api-gateway/websockets": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/security_groups/no_inbound": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-heavy-cls": {
+        "env": "${local.misc_job_sqs_sg_env}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${local.no_inbound_sg_workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "fargate/go-heavy-cls": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "sqs/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      }
+    }
+  },
+  "elasticache/glasseson-cache": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "fargate/go-admin-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ec2/terminate-instances": {
+    "env": "global.env",
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/notify-datadog": {
+    "env": "global.env",
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/roles/websockets-api-gw-lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/rotate-circleci-keys": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/card-cryptor-job-scale": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/replicator-scale": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "algo/algo-dl-spot/ec2": {
+    "env": "global.env",
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/route53/change-record-policy": {
+    "env": "global.env",
+    "dependencies": {
+      "algo/algo-dl-spot/lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "efs": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "algo/algo-dl-spot/ec2": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "ecs/go-replicator-cls": {
+        "env": "${local.efs_environment}",
+        "dependencies": {}
+      },
+      "ecs/go-heavy-spot-cls": {
+        "env": "${local.efs_environment}",
+        "dependencies": {}
+      },
+      "ec2/go-spot-asg": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/vpc-flow/cloudwatch": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "vpc-default": {
+        "env": "${var.AWS_REGION}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-vpc-flow-logging": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "vpc-default": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-replicator-backup": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "ecs/go-replicator-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-us-east-1-card-cryptor-job": {
+    "env": "",
+    "dependencies": {
+      "ecs/go-heavy-spot-cls": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-card-cryptor-job": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "ecs/go-heavy-spot-cls": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "lambda/websockets-api-gw": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "api-gw/websockets": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/api_gateway": {
+    "env": "global.env",
+    "dependencies": {
+      "api-gw/websockets": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "fargate/go-light-cls": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "sqs/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      }
+    }
+  },
+  "beanstalk/static-web": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "sqs/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/beanstalk/circleci-beanstalk-policies": {
+        "env": "${each.value}",
+        "dependencies": {}
+      }
+    }
+  },
+  "ec2/go-spot-asg": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "sqs/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "iam/policies/loggly": {
+        "env": "${each.value}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/cloudhealth-cur-6over6": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/roles/cloudhealth-cur-doit-role": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/roles/cloudhealth-role": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudhealth": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/roles/cloudhealth-role": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudwatch/put-custom-metric": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/roles/websockets-api-gw-lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/active-sessions-scale": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/rotate-keys": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cmp": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/roles/cmp-role": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-data-registry": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/data-registry-reader": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/go-recordings": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/recordings-reader": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/beanstalk/circleci-beanstalk-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ec2/circleci-ec2-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ecs/circleci-ecs-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/circleci-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/circleci": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/it-secrets": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/it": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/algo-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/algo": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/lambda/algo-invoke-lambda": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/algo": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/ios-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/ios": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/secret-manager/get-api-key-secret": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/ios": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/spacelift": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/spacelift": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/android": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/android": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/loggly": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/loggly": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/fullstack-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/fullstack": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/read-only-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/read-only": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/ses/send-mail-policy": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/ses": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/s3/developers-s3-policies": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/groups/developers": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-integrity": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/glasseson-integrity": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/algo-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-yolo-test": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/glasseson-yolo-test": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/algo-automation-datasets": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-datasets": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-data-registry": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/algo-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/go-data-registry": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-web-cache": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/s3/glasseson-web-cache": {
+        "env": "global",
+        "dependencies": {}
+      },
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-analyze-dev": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/glasseson-analyze-dev": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-analyze-prod": {
+    "env": "",
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-assets": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/s3/fullstack-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/glasseson-assets": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/cloudhealth-cur-6over6": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/cloudhealth-cur-6over6": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/glasseson-keys": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/developers-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-beanstalk-extensions": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/go-github-backup": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/pypi.glasseson.com": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/myrx-web-cache": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "iam/policies/s3/myrx-web-cache": {
+        "env": "${each.value}",
+        "dependencies": {}
+      }
+    }
+  },
+  "s3/lambda-websockets-api-gw": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/s3/circleci-s3-policies": {
+        "env": "${each.value}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gw/websockets": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/api-gateway/websockets": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/roles/websockets-api-gw-lambda": {
+    "env": "${terraform.workspace}",
+    "dependencies": {
+      "iam/policies/api-gateway/websockets": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      },
+      "lambda/websockets-api-gw": {
+        "env": "${terraform.workspace}",
+        "dependencies": {}
+      }
+    }
+  },
+  "sqs/loggly": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/loggly": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "algo/algo-dl-spot/lambda": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/policies/lambda/algo-invoke-lambda": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/admins": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/algo": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/android": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/circleci": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/data-registry-reader": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/deployers": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/developers": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/fullstack": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/ios": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/it": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/qa": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/read-only": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/recordings-reader": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/ses": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/yolo-test-reader": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/loggly": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/spacelift": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/xcode-cloud": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/groups/view-only": {
+    "env": "global.env",
+    "dependencies": {
+      "iam/users": {
+        "env": "global",
+        "dependencies": {}
+      }
+    }
+  },
+  "iam/policies/cloudwatch/ecs-describe-services": {
+    "env": "global.env",
+    "dependencies": {
+      "lambda/active-sessions-scale": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/qr-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      },
+      "lambda/pd-verify-scans": {
+        "env": "${var.ACCOUNT_GLOBAL_WORKSPACE}",
+        "dependencies": {}
+      }
+    }
+  },
+  "api-gw/flow-manager": {
+    "env": "",
+    "dependencies": {
+      "lambda/test-web-sdk-versions": {
+        "env": "dev",
+        "dependencies": {}
+      }
+    }
+  }
+}
