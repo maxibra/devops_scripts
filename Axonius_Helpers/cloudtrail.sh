@@ -1,13 +1,13 @@
 !#/bin/bash
 # This script looks up AWS CloudTrail events for AssumeRoleWithWebIdentity
 # for a specific session name within a specified time range.
-# Usage: ./cloudtrail.sh
+# Usage: ./cloudtrail.sh profile_name
 
 
+p="$1"
 hours_back_start=5
 hours_back_end=0
 r="us-east-2"
-p="139388023521:read-only"
 session_name="cortex_60274-merge_15255121314"
 
 aws cloudtrail lookup-events \
