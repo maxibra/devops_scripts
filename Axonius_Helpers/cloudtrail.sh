@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # This script looks up AWS CloudTrail events for AssumeRoleWithWebIdentity
 # for a specific session name within a specified time range.
 # Usage: ./cloudtrail.sh profile_name

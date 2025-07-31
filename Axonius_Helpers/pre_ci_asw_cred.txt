@@ -1,0 +1,15 @@
+Run aws-actions/configure-aws-credentials@67fbcbb121271f7775d2e7715933280b06314838
+  with:
+    role-to-assume: arn:aws:iam::139388023521:role/oidc-gha-cortex-all
+    role-session-name: cortex_59748-merge_15155656793
+    aws-region: us-east-2
+    audience: sts.amazonaws.com
+  env:
+    AWS_DEFAULT_REGION: us-east-2
+    PR_NUMBER: 59748
+    REGISTRY: 617768235988.dkr.ecr.us-east-2.amazonaws.com
+    ACTION_URL: https://github.com/Axonius/cortex/actions/runs/15155656793
+    AX_AWS_ACCOUNT: 139388023521
+    SHORT_REPO_NAME: cortex
+    SESSION_NAME: cortex_59748-merge_15155656793
+    OIDC_ASSUME_ROLE: arn:aws:iam::139388023521:role/oidc-gha-cortex-all
