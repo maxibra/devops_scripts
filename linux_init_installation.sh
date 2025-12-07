@@ -7,6 +7,21 @@ sudo apt install -y \
     vim \
     zsh
 
+mkdir -p $HOME/.keys
+
+echo "Configuring git..."
+git config --global user.name "MB"
+git config --global user.email "my.email@gmail.com"
+echo "Generating Github ssh key..."
+GITHUB_KEY_FILE="$HOME/.keys/github-my_personal_id_ed25519"
+if [ ! -f "$GITHUB_KEY_FILE" ]; then
+    ssh-keygen -t ed25519 -f $GITHUB_KEY_FILE -N ""
+    chmod 600 $GITHUB_KEY_FILE
+    echo "Here is the public key to add to your GitHub account:"
+    cat $GITHUB_KEY_FILE.pub              
+fi
+
+
 echo "Installing Oh My Zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -88,4 +103,26 @@ if ! grep -qs "$SSD_MOUNT_POINT" /proc/mounts; then
     sudo mount -a
     systemctl daemon-reload
 fi
+
+echo "Configuring connection to Raspbery cluster..."
+RASPBERRY_KEY_FILE="$HOME/.keys/raspberryPi_id_ed25519"
+if [ ! -f "$RASPBERRY_KEY_FILE" ]; then
+    mkdir -p $HOME/.keys
+    ssh-keygen -t ed25519 -f $RASPBERRY_KEY_FILE -N ""
+    chmod 600 $RASPBERRY_KEY_FILE
+    echo "Here is the public key to add to your GitHub account:"
+    cat $RASPBERRY_KEY_FILE.pub   
+    # ssh-copy-id -i $HOME/.keys/raspberryPi_id_ed25519.pub pi@k8s-0
+fi
+
+sudo tee -a /etc/hosts <<EOF
+# Raspberry Pi cluster
+192.168.0.110 k8s-0
+192.168.0.111 k8s-1
+192.168.0.112 k8s-2
+192.168.0.113 k8s-3
+EOF
+
+
+
 
