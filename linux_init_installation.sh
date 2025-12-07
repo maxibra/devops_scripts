@@ -123,6 +123,28 @@ sudo tee -a /etc/hosts <<EOF
 192.168.0.113 k8s-3
 EOF
 
+echo "Configuring SSH config file..."
+SSH_CONFIG_FILE="$HOME/.ssh/config"
+if [ ! -f "$SSH_CONFIG_FILE" ]; then
+    mkdir -p "$HOME/.ssh"
+    tee -a "$SSH_CONFIG_FILE" <<EOF
+# github private account
+Host github.com-personal
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.keys/github-my_personal_id_ed25519
+
+# Raspberry
+Host k8s-0 k8s-1 k8s-2 k8s-3
+    HostName %h
+    IdentityFile ~/.keys/raspberryPi_id_ed25519
+    IdentitiesOnly yes           
+    StrictHostKeyChecking no    
+    UserKnownHostsFile /dev/null 
+EOF
+    chmod 600 "$SSH_CONFIG_FILE"
+fi  
+
 
 
 
