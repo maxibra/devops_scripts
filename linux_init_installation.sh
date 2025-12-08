@@ -149,7 +149,7 @@ echo "Installing VScode..."
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
-for e in docker.docker github.copilot github.copilot-chat github.vscode-pull-request-github hashicorp.terraform ms-python.python mechatroner.rainbow-csv  ms-kubernetes-tools.vscode-kubernetes-tools oderwat.indent-rainbow
+for e in docker.docker github.copilot github.copilot-chat github.vscode-pull-request-github hashicorp.terraform ms-python.python mechatroner.rainbow-csv  ms-kubernetes-tools.vscode-kubernetes-tools oderwat.indent-rainbowl do
     code --install-extension $e
 done
 code --list-extensions --show-versions
