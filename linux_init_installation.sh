@@ -2,13 +2,18 @@
 # The script was created for Mint/Ubuntu based distributions
 
 sudo apt update
-sudo apt install -y \
+# install core packages (non-interactive)
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     git \
     jq \
     pre-commit \
     vim \
-    yq \s
-    zsh
+    yq \
+    zsh \
+    curl \
+    unzip \
+    fontconfig \
+    ca-certificates
 
 mkdir -p $HOME/.keys
 
@@ -34,8 +39,10 @@ echo "Installing Powerlevel10k theme..."
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 fi
-# Set ZSH_THEME in .zshrc
-sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' $HOME/.zshrc
+# Set ZSH_THEME in .zshrc (use extended regex for safety)
+if [ -f "$HOME/.zshrc" ]; then
+    sed -i -E 's/^ZSH_THEME=.*$/ZSH_THEME="powerlevel10k\/powerlevel10k"/' "$HOME/.zshrc"
+fi
 
 echo "Installing zsh plugins..."
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
@@ -44,10 +51,12 @@ fi
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
-# Add plugins to .zshrc — replace entire plugins line with desired list
-sed -i 's/^plugins=(.*)/plugins=(git docker terraform kubectl helm zsh-autosuggestions zsh-syntax-highlighting)/' "$HOME/.zshrc"
+# Add plugins to .zshrc — replace entire plugins line with desired list (use extended regex)
+if [ -f "$HOME/.zshrc" ]; then
+    sed -i -E 's/^plugins=\(.*/plugins=(git docker terraform kubectl helm zsh-autosuggestions zsh-syntax-highlighting)/' "$HOME/.zshrc"
+fi
 
-echo "installing Meslo LGS NF fonts for Powerlevel10k..."
+echo "Installing Meslo LGS NF fonts for Powerlevel10k..."
 MESLO_TMP="$(mktemp -d)"
 MESLO_ZIP="$MESLO_TMP/meslo.zip"
 FONTS_DIR="$HOME/.local/share/fonts"
@@ -55,24 +64,30 @@ FONTS_DIR="$HOME/.local/share/fonts"
 mkdir -p "$FONTS_DIR"
 
 echo "Downloading Meslo Nerd Font..."
-curl -fL --retry 3 -o "$MESLO_ZIP" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip"
+if ! curl -fL --retry 3 -o "$MESLO_ZIP" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip"; then
+    echo "Failed to download Meslo.zip — please check your network or visit https://github.com/ryanoasis/nerd-fonts/releases" >&2
+else
+    echo "Extracting and installing Meslo fonts to $FONTS_DIR..."
+    unzip -o "$MESLO_ZIP" -d "$MESLO_TMP" >/dev/null 2>&1 || true
+    # copy TTF files that include Meslo into fonts dir
+    find "$MESLO_TMP" -type f -iname "*Meslo*.ttf" -exec cp -v {} "$FONTS_DIR/" \; || true
 
-echo "Extracting and installing Meslo fonts to $FONTS_DIR..."
-unzip -o "$MESLO_ZIP" -d "$MESLO_TMP"
-# copy TTF files that include Meslo into fonts dir
-find "$MESLO_TMP" -type f -iname "*Meslo*.ttf" -exec cp -v {} "$FONTS_DIR/" \;
+    echo "Updating font cache..."
+    fc-cache -fv "$FONTS_DIR" >/dev/null 2>&1 || true
 
-echo "Updating font cache..."
-fc-cache -fv "$FONTS_DIR"
-sudo dpkg-reconfigure fontconfig
-gsettings get org.gnome.desktop.interface monospace-font-name
-gsettings set org.gnome.desktop.interface monospace-font-name 'MesloLGS NF 14'
+    # Try to set monospace font for GNOME/Cinnamon if gsettings is available
+    if command -v gsettings >/dev/null 2>&1; then
+        for schema in org.cinnamon.desktop.interface org.gnome.desktop.interface; do
+            if gsettings writable "$schema" monospace-font-name >/dev/null 2>&1; then
+                gsettings set "$schema" monospace-font-name 'MesloLGS NF 14' >/dev/null 2>&1 || true
+            fi
+        done
+    fi
 
-# cleanup
-rm -rf "$MESLO_TMP"
-
-# Source .zshrc to apply changes
-source $HOME/.zshrc
+    # cleanup
+    rm -rf "$MESLO_TMP"
+    echo "Meslo LGS NF installation finished (user fonts: $FONTS_DIR). Restart your terminal or log out/in to apply fonts." 
+fi
 
 echo "Installing Docker..."
 if ! command -v docker &> /dev/null; then
@@ -148,13 +163,33 @@ EOF
     chmod 600 "$SSH_CONFIG_FILE"
 fi  
 
-echo "Installing VScode..."
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code
-for e in docker.docker github.copilot github.copilot-chat github.vscode-pull-request-github hashicorp.terraform ms-python.python mechatroner.rainbow-csv ms-kubernetes-tools.vscode-kubernetes-tools oderwat.indent-rainbowl do
-    code --install-extension $e
-done
-code --list-extensions --show-versions
+echo "Installing VSCode (if not present)..."
+if ! command -v code >/dev/null 2>&1; then
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - || true
+    sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" || true
+    sudo apt-get update
+    sudo apt-get install -y code || true
+fi
+
+# Install common extensions (if code is available)
+if command -v code >/dev/null 2>&1; then
+    extensions=(
+        ms-azuretools.vscode-docker
+        GitHub.copilot
+        GitHub.copilot-chat
+        github.vscode-pull-request-github
+        hashicorp.terraform
+        ms-python.python
+        mechatroner.rainbow-csv
+        ms-kubernetes-tools.vscode-kubernetes-tools
+        oderwat.indent-rainbow
+    )
+    for e in "${extensions[@]}"; do
+        code --install-extension "$e" >/dev/null 2>&1 || true
+    done
+    code --list-extensions --show-versions
+else
+    echo "VSCode not found: skipping extension installation. Install 'code' first to add extensions automatically."
+fi
 
 
