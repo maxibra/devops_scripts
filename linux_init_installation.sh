@@ -80,6 +80,41 @@ if [ ! -f "$GITHUB_KEY_FILE" ]; then
 fi
 
 
+log "Installing nvm and Node 20 (LTS)"
+NVM_INSTALL_URL="https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh"
+NVM_DIR="$HOME/.nvm"
+
+# If node v20 is already installed and force is not set, skip
+if [ "$FORCE" != true ] && command -v node >/dev/null 2>&1 && node -v | grep -qE '^v20\.'; then
+    log "Node v20 already installed and active; skipping nvm/node install."
+else
+    NVM_TMP_DIR="$(mktemp -d)"
+    NVM_SCRIPT="$NVM_TMP_DIR/install_nvm.sh"
+    if download_to_file "$NVM_INSTALL_URL" "$NVM_SCRIPT"; then
+        bash "$NVM_SCRIPT" || true
+        # Load nvm for this script's session
+        export NVM_DIR="$NVM_DIR"
+        if [ -s "$NVM_DIR/nvm.sh" ]; then
+            # shellcheck source=/dev/null
+            . "$NVM_DIR/nvm.sh"
+        fi
+
+        # Install and set Node 20
+        if command -v nvm >/dev/null 2>&1; then
+            log "Using nvm to install Node 20"
+            nvm install 20 || true
+            nvm use 20 || true
+            nvm alias default 20 || true
+            log "Node 20 installed and set as default via nvm"
+        else
+            err "nvm installation succeeded but 'nvm' command is not available in this shell. You may need to start a new shell or source \"$NVM_DIR/nvm.sh\"."
+        fi
+    else
+        err "Failed to download nvm install script from $NVM_INSTALL_URL"
+    fi
+    rm -rf "$NVM_TMP_DIR" || true
+fi
+
 log "Installing Oh My Zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
